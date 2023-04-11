@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners",
+  "info": {
+    "singularName": "partner",
+    "pluralName": "partners",
+    "displayName": "Partner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "address": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "minLength": 8
+    },
+    "position": {
+      "type": "string"
+    },
+    "sale_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sale-order.sale-order",
+      "mappedBy": "partner"
+    }
+  }
+}

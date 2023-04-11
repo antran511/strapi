@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sale_orders",
+  "info": {
+    "singularName": "sale-order",
+    "pluralName": "sale-orders",
+    "displayName": "Sale Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::partner.partner",
+      "inversedBy": "sale_orders"
+    },
+    "sale_lines": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sale-line.sale-line",
+      "mappedBy": "sale_order"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "sale",
+        "done"
+      ]
+    }
+  }
+}

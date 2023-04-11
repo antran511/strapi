@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "uoms",
+  "info": {
+    "singularName": "uom",
+    "pluralName": "uoms",
+    "displayName": "Uom",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

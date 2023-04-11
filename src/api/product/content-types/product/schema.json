@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "is_axis": {
+      "type": "boolean",
+      "default": false
+    },
+    "uom": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::uom.uom"
+    },
+    "purchase_uom": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::uom.uom"
+    },
+    "is_different_purchase_uom": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
